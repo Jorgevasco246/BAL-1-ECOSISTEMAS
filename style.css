@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 100px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+#anime {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.anime-card {
+  display: flex;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  align-items: center;
+}
+
+
+.anime-card:hover {
+  box-shadow: 0 12px 25px rgba(198, 198, 198, 0.15);
+
+}
+
+.anime-card img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+
+.anime-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.anime-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.anime-card button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.anime-card button:hover {
+  background-color: #43a047;
+}
+
+.back-button {
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+}
