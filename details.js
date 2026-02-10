@@ -5,7 +5,7 @@ const getAnimeDetails = async () => {
   const response = await fetch(`https://api.jikan.moe/v4/anime/${id}`);
 
   if (!response.ok) {
-    console.log("Error loading anime");
+    console.log("Error");
     return;
   }
 
@@ -21,8 +21,9 @@ const getAnimeDetails = async () => {
 
       <p><strong>Synopsis:</strong> ${anime.synopsis}</p>
       <p><strong>Episodes:</strong> ${anime.episodes ?? "Unknown"}</p>
-      <p><strong>Started Date:</strong> ${anime.started_date ?? "Unknown"}</p>
-      <p><strong>Ended Date:</strong> ${anime.ended_date ?? "Unknown"}</p>
+      <p><strong>Started Date:</strong> ${anime.aired.from}</p>
+      <p><strong>Ended Date:</strong> ${anime.aired.to }</p>
+
 
       <a href="index.html">
         <button class="back-button">Volver</button>

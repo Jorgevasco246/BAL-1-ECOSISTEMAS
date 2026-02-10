@@ -4,27 +4,66 @@
 }
 
 body {
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 100px;
+    margin: 0;
+  min-height: 100vh;
+  background-image: url("fondoani.jpg");
+  background-size: cover;      
+  background-position: center;   
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  
   text-align: center;
+  padding: 100px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.452); 
+  z-index: -1;
+}
+
+#loading-message {
+  color: white;
+  font-size: 24px;
+}
+
+#titulo {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.853);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+#anime-title-okay {
+  color: rgb(106, 0, 0);
+  font-size: 20px;
 }
 
 h1 {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #anime {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
+#detalleanime {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
 
 .anime-card {
   display: flex;
   gap: 20px;
-  background-color: #ffffff;
+  background-color: #ffffffee;
   padding: 20px;
   border-radius: 12px;
   align-items: center;
@@ -40,8 +79,6 @@ h1 {
   width: 150px;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 0;
-  flex-shrink: 0;
 }
 
 
@@ -71,9 +108,40 @@ h1 {
 }
 
 .back-button {
+  margin-top: 10px;
+  padding: 10px;
   background-color: #2196f3;
   border: none;
   color: white;
   border-radius: 6px;
+  cursor: pointer;
   font-size: 14px;
 }
+
+.details-page {
+  color: white;
+}
+
+.details-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+
+.details-page .anime-detail-card {
+  background-color: rgba(20, 20, 20, 0.929);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: auto;
+}
+.details-page p {
+  color: #edeaea;
+}
+
+
+
