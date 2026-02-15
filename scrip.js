@@ -2,16 +2,16 @@ console.log("hello world");
 
 const container = document.getElementById("anime");
 
-//LOADING STATE
-container.innerHTML = "<p id='loading-message'>Cargando animes</p>";
+// 🔹 LOADING STATE
+container.innerHTML = "<p>Cargando animes...</p>";
 
 const getAnime = async () => {
   try {
     const response = await fetch("https://api.jikan.moe/v4/anime");
 
-    //ERROR STATE
+    // 🔹 ERROR STATE
     if (!response.ok) {
-      throw new Error("Error State");
+      throw new Error("Error fetching data");
     }
 
     const result = await response.json();
@@ -19,13 +19,13 @@ const getAnime = async () => {
 
     container.innerHTML = "";
 
-    //EMPTY STATE
+    // 🔹 EMPTY STATE
     if (!animes || animes.length === 0) {
       container.innerHTML = "<p>No animes found.</p>";
       return;
     }
 
-    //RESULTS STATE
+    // 🔹 RESULTS STATE
     for (const anime of animes) {
       const animeElement = document.createElement("div");
       animeElement.classList.add("anime-card");
@@ -43,8 +43,8 @@ const getAnime = async () => {
     }
 
   } catch (error) {
-    //ERROR STATE (catch)
-    container.innerHTML = "<p>Error State</p>";
+    // 🔹 ERROR STATE (catch)
+    container.innerHTML = "<p>Error loading animes. Please try again later.</p>";
     console.error(error);
   }
 };
